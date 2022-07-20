@@ -23,7 +23,7 @@ var reverseString = function(s) {
   }
   return s
 }
-// 
+// https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array
 // 同向双指针
 // 初始化 i j
 // i = 0
