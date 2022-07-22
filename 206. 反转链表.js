@@ -1,15 +1,27 @@
-// https://leetcode.cn/problems/reverse-linked-list/
-// 递归法
-// 1. 递归终止条件
-// 2. 问下一次递归要结果
-// 3. 进行当前递归的操作
-// 4. 返回结果
-var reverseList = function(head) {
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */
+/**
+ * @param {ListNode} head
+ * @return {ListNode}
+ * https://leetcode.cn/problems/reverse-linked-list/submissions/
+ */
+ var reverseList = function(head) {
+  // 递归法
+  // 递归终止条件
   if(head == null || head.next == null) {
-    return head
+      return head
   }
-  var reverseHead = reverseList(head.next)
+  // 向子问题要答案
+  var reHead = reverseList(head.next)
+  // 当前递归的操作
+  // 选取中间状态观察
   head.next.next = head
   head.next = null
-  return reverseHead
-}
+  // 返回结果
+  return reHead
+};
