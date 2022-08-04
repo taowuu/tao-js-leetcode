@@ -4,19 +4,18 @@
  * @return {number[]}
  * https://leetcode.cn/problems/two-sum/
  */
- var twoSum = function(nums, target) {
-    // 创建哈希表查询目标值
-    const map = new Map()
-    // 遍历
-    for(let i = 0; i <nums.length; i++) {
-        // 计算差值
-        let val = target - nums[i]
-        // 差值找到即为答案
-        if(map.has(val)) {
-            return [map.get(val), i]
+var twoSum = function(nums, target) {
+    let obj = {}
+    for(let i = 0; i < nums.length; i++) {
+        let num = nums[i]
+        let ans = target - num
+        // 找到与之配对的数
+        // 返回当前数下标和配对数下标
+        if(ans in obj) {
+            return [i, obj[ans]]
+        } else {
+            // 为每个数记录下标
+            obj[num] = i
         }
-        // 为每个值记录下标
-        map.set(nums[i], i)
     }
-    return []
 };
