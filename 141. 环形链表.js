@@ -9,22 +9,30 @@
 /**
  * @param {ListNode} head
  * @return {boolean}
- * https://leetcode.cn/problems/linked-list-cycle/
  */
- var hasCycle = function(head) {
-  // 边界处理
-  if(head == null || head.next == null) {
-      return false
-  }
-  var slow = head
-  var fast = head.next
-  while(slow != fast) {
-      // 避免 fast 出错
-      if(fast == null || fast.next == null) {
-          return false
-      }
-      slow = slow.next
-      fast = fast.next.next
-  }
-  return true
+// var hasCycle = function(head) {
+//     let cache = new Set()
+//     while(head) {
+//         if(cache.has(head)) {
+//             return true
+//         } else {
+//             cache.add(head)
+//         }
+//         head = head.next
+//     }
+//     return false
+// };
+var hasCycle = function(head) {
+    let fast = head
+    let slow = head
+    // 确保有 head
+    // 无环 fast 先走完
+    while(fast && fast.next) {
+        fast = fast.next.next
+        slow = slow.next
+        if(fast === slow) {
+            return true
+        }
+    }
+    return false
 };

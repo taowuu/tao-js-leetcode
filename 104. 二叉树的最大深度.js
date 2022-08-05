@@ -21,7 +21,6 @@
   // 向子问题要答案
   var leftVal = maxDepth(root.left)
   var rightVal = maxDepth(root.right)
-  // 当前层的操作，记录最大层数
   var res = Math.max(leftVal, rightVal) + 1
   // 把答案交给父问题
   return res
