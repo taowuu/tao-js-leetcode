@@ -25,3 +25,17 @@
     }
     return res
 };
+var findContentChildren = function(g, s) {
+    g.sort((a, b) => a - b)
+    s.sort((a, b) => a - b)
+    // 用最大饼干满足胃口最大孩子
+    let res = 0
+    let j = s.length - 1
+    for(let i = g.length - 1; i >= 0; i--) {
+        if(j >= 0 && s[j] >= g[i]) {
+            res++
+            j--
+        }
+    }
+    return res
+};
