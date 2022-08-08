@@ -2,6 +2,7 @@
  * @param {number[]} coins
  * @param {number} amount
  * @return {number}
+ * https://leetcode.cn/problems/coin-change/
  */
 var coinChange = function(coins, amount) {
     // dp 数组：每个金额所需硬币的最小个数
@@ -23,4 +24,16 @@ var coinChange = function(coins, amount) {
     return dp[amount] === _max ? -1 : dp[amount]
 
 
+};
+var coinChange = function(coins, amount) {
+    if(!amount) return 0
+    // 下标要取到 amount
+    let dp = new Array(amount+1).fill(Infinity)
+    dp[0] = 0
+    for(let i = 0; i < coins.length; i++) {
+        for(let j = coins[i]; j <= amount; j++) {
+            dp[j] = Math.min(dp[j], dp[j-coins[i]]+1)
+        }
+    }
+    return dp[amount] === Infinity ? -1 : dp[amount]
 };
