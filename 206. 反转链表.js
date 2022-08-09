@@ -11,17 +11,24 @@
  * https://leetcode.cn/problems/reverse-linked-list/submissions/
  */
  var reverseList = function(head) {
-  // 递归法
-  // 递归终止条件
   if(head == null || head.next == null) {
       return head
   }
-  // 向子问题要答案
-  var reHead = reverseList(head.next)
-  // 当前递归的操作
-  // 选取中间状态观察
+  let temp = reverseList(head.next)
   head.next.next = head
   head.next = null
-  // 返回结果
-  return reHead
+  return temp
+};
+var reverseList = function(head) {
+  if(!head || !head.next) return head
+  let prev = null,
+      cur = head
+  while(cur) {
+      // 保留下一个节点
+      let n = cur.next
+      cur.next = prev
+      prev = cur
+      cur = n
+  } 
+  return prev
 };
