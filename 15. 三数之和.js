@@ -1,39 +1,39 @@
+/*
+ * @lc app=leetcode.cn id=15 lang=javascript
+ *
+ * [15] 三数之和
+ */
+
+// @lc code=start
 /**
  * @param {number[]} nums
  * @return {number[][]}
  * https://leetcode.cn/problems/3sum/
  */
  var threeSum = function(nums) {
-  var n = nums.length
-  if (n < 3) return []
-  // 反向双指针，先升序
-  nums.sort(function(a, b){return a-b})
-  var res = []
-  for(var k = 0; k < n - 2; k++) {
-      // 优化
-      if(nums[k] > 0) break
-      // 相同 k 会得到重复结果
-      if(k > 0 && nums[k] == nums[k-1]) continue
-      var i = k + 1
-      var j = n - 1
-      // 双指针
-      while(i < j) {
-          var sum = nums[k] + nums[i] + nums[j]
-          if(sum < 0) {
-              // 相同 i 会得到重复结果
-              // 寻找大数中和为 0
-              while(i < j && nums[i] == nums[++i]);
-          } else if(sum > 0) {
-              // 相同 j 会得到重复结果
-              // 寻找小数中和为 0
-              while(i < j && nums[j] == nums[--j]);
-          } else {
-              // 答案
-              res.push([nums[k],nums[i],nums[j]])
-              while(i < j && nums[i] == nums[++i]);
-              while(i < j && nums[j] == nums[--j]);
-          }
-      }
-  }
-  return res
+    // 反向双指针
+    if(nums.length < 3) return new Array()
+    nums.sort((a, b) => a - b)
+    let res = new Array()
+    for(let i = 0; i < nums.length - 2; i++) {
+        if(nums[i] > 0) break
+        if(i > 0 && nums[i] === nums[i - 1]) continue
+        let left = i + 1,
+            right = nums.length - 1
+        while(left < right) {
+            let sum = nums[i] + nums[left] + nums[right]
+            if(sum > 0) {
+                while(left < right && nums[right] === nums[--right]);
+            } else if(sum < 0) {
+                while(left < right && nums[left] === nums[++left]);
+            } else {
+                res.push([nums[i], nums[left], nums[right]])
+                while(left < right && nums[left] === nums[++left]);
+                while(left < right && nums[right] === nums[--right]);
+            }
+        }
+    }
+    return res
 };
+// @lc code=end
+

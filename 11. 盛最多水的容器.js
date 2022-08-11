@@ -1,22 +1,27 @@
+/*
+ * @lc app=leetcode.cn id=11 lang=javascript
+ *
+ * [11] 盛最多水的容器
+ */
+
+// @lc code=start
 /**
  * @param {number[]} height
  * @return {number}
  * https://leetcode.cn/problems/container-with-most-water/
  */
- var maxArea = function(h) {
-  // 反向双指针
-  // i->head, j->tail
-  var i = 0
-  var j = h.length - 1
-  // 设置初始结果，边界处理
-  var max = 0
-  // 遍历
-  while(i < j) {
-      // 选出最小高度，走到下一个可能性
-      var minHeight = h[i] < h[j] ? h[i++] : h[j--]
-      // 下标变化了 1， 计算面积要加回来
-      var area = (j - i + 1) * minHeight
-      max = Math.max(max, area)
-  }
-  return max
+ var maxArea = function(height) {
+    // 贪心，反向双指针
+    let left = 0,
+        right = height.length - 1,
+        max = 0
+    while(left <= right) {
+        let minH = height[left] > height[right] ? height[right--] : height[left++]
+        // 上方下标移动了 1 ，这里要加回来
+        let area = (right - left + 1) * minH
+        max = Math.max(max, area)
+    }
+    return max
 };
+// @lc code=end
+

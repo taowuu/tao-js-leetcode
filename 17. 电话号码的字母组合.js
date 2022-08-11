@@ -1,43 +1,42 @@
+/*
+ * @lc app=leetcode.cn id=17 lang=javascript
+ *
+ * [17] 电话号码的字母组合
+ */
+
+// @lc code=start
 /**
  * @param {string} digits
  * @return {string[]}
  * https://leetcode.cn/problems/letter-combinations-of-a-phone-number/
  */
  var letterCombinations = function(digits) {
-    const map = {
-        '2': ['a', 'b', 'c'],
-        '3': ['d', 'e', 'f'],
-        '4': ['g', 'h', 'i'],
-        '5': ['j', 'k', 'l'],
-        '6': ['m', 'n', 'o'],
-        '7': ['p', 'q', 'r', 's'],
-        '8': ['t', 'u', 'v'],
-        '9': ['w', 'x', 'y', 'z'],
-    }
-    // 边界处理: 1, ""
+    // 递归
+    const map = new Map()
+    map.set('2', ['a', 'b', 'c'])
+    map.set('3', ['d', 'e', 'f'])
+    map.set('4', ['g', 'h', 'i'])
+    map.set('5', ['j', 'k', 'l'])
+    map.set('6', ['m', 'n', 'o'])
+    map.set('7', ['p', 'q', 'r', 's'])
+    map.set('8', ['t', 'u', 'v'])
+    map.set('9', ['w', 'x', 'y', 'z'])
     if(digits.length <= 1) {
-        return map[digits] ? map[digits] : []
+        return map.get(digits) ? map.get(digits) : new Array()
     }
-    // 局部变量
     const res = new Array()
-    // 递归调用
     helper(digits, map, res, '', 0)
     return res
 };
-// 
-const helper = (digits, map, res, s, i) => {
-    // 递归终止条件
+const helper = (digits, map, res, str, i) => {
     if(digits.length === i) {
-        res.push(s)
+        res.push(str)
         return
     }
-    // 当前层操作 no
-    // 向子问题要答案
-    let key = digits.charAt(i)
-    let arr = map[key]
-    for(let j of arr) {
-        helper(digits, map, res, s + j, i + 1)
-    } 
-    // 清除当前层状态 no
-    // 答案交给父问题 no
+    let arr = map.get(digits[i])
+    for(let s of arr) {
+        helper(digits, map, res, str + s, i + 1)
+    }
 }
+// @lc code=end
+
