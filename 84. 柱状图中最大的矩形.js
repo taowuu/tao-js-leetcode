@@ -23,7 +23,6 @@
           // 下标从 0 开始等于没减故 -1
           var _area = (i - s[s.length-1] - 1) * h
           area = Math.max(area, _area)
-          
       }
       s.push(i)
   }
@@ -35,7 +34,6 @@
       var _area = (n - 1 - s[s.length-1]) * heights[top]
       // console.log(_area)
       area = Math.max(area, _area)
-      
   }
   return area
 };
