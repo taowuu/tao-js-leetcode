@@ -1,18 +1,27 @@
+/*
+ * @lc app=leetcode.cn id=71 lang=javascript
+ *
+ * [71] 简化路径
+ */
+
+// @lc code=start
 /**
-* @param {string} path
-* @return {string}
+ * @param {string} path
+ * @return {string}
 * https://leetcode.cn/problems/simplify-path/
-*/
+ */
 var simplifyPath = function(path) {
-    let stack = []
-    let paths = path.split("/")
-    for(let i = 0; i < paths.length; i++) {
-        let e = paths[i]
-        if(e && e !== '.' && e !== '..') {
-            stack.push(e)
-        } else if(e === '..') {
-            stack.pop()
+    // 栈
+    let arr = path.split('/')
+    let stack = new Array()
+    for(let i = 0; i < arr.length; i++) {
+        if(arr[i] && arr[i] !== '.' && arr[i] !== '..') {
+            stack.push(arr[i])
+        } else if(arr[i] === '..') {
+            stack.length && stack.pop()
         }
     }
     return '/' + stack.join('/')
 };
+// @lc code=end
+

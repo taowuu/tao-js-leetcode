@@ -1,31 +1,29 @@
+/*
+ * @lc app=leetcode.cn id=78 lang=javascript
+ *
+ * [78] 子集
+ */
+
+// @lc code=start
 /**
  * @param {number[]} nums
  * @return {number[][]}
  * https://leetcode.cn/problems/subsets/
  */
  var subsets = function(nums) {
-    if(nums == null) return []
-    // 全局变量
-    let res = []
-    // 递归调用
-    helper(nums, res, [], 0)
+    // 回溯
+    if(nums.length === 1) [new Array(), nums]
+    let res = new Array()
+    helper(nums, res, new Array(), 0)
     return res
 };
-
-const helper = (nums, res, list, i) => {
-    // 递归终止
-    if(i == nums.length) {
-        // 创造新数组，避免引用传递
-        res.push(list.slice())
-        return
+const helper = (nums, res, temp, k) => {
+    res.push(temp.slice())
+    for(let i = k; i < nums.length; i++) {
+        temp.push([nums[i]])
+        helper(nums, res, temp, i + 1)
+        temp.pop()
     }
-    // 当前层
-    // 不选 i
-    // 下一层
-    helper(nums, res, list, i + 1)
-    // 选 i，下一层
-    list.push(nums[i])
-    helper(nums, res, list, i + 1)
-    // 清除当前层数据
-    list.pop() 
 }
+// @lc code=end
+

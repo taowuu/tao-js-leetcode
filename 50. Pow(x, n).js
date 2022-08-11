@@ -1,3 +1,10 @@
+/*
+ * @lc app=leetcode.cn id=50 lang=javascript
+ *
+ * [50] Pow(x, n)
+ */
+
+// @lc code=start
 /**
  * @param {number} x
  * @param {number} n
@@ -5,22 +12,18 @@
  * https://leetcode.cn/problems/powx-n/
  */
  var myPow = function(x, n) {
-    // 二分幂 分治
-    // even n * n
-    // odd n * n * x
-    // 全局变量
+    // 二分，分治，递归
+    if(x === 0.0) return 0.0
+    if(n === 0) return 1.0
+    if(n === 1) return x
     let N = n
-    // 返回答案，从递归来
-    return N > 0 ? helper(x, N) : 1.0 / helper(x, -N)
+    return n > 0 ? helper(x, N) : 1.0 / helper(x, -N)
 };
-
-var helper = (x, N) => {
-    // 递归终止
-    if(N == 0) return 1.0
-    // 当前层无操作
-    // 向子问题要答案
+const helper = (x, N) => {
+    if(N === 0) return 1.0
     let y = helper(x, Math.floor(N / 2))
-    // 无需清除当前层变量
-    // 把答案传给父问题
-    return N % 2 == 0 ? y * y : y * y * x
+    return N % 2 === 0 ? y * y : y * y * x
 }
+// @lc code=end
+
+// console.log(!0.0)

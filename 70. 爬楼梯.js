@@ -1,23 +1,28 @@
+/*
+ * @lc app=leetcode.cn id=70 lang=javascript
+ *
+ * [70] 爬楼梯
+ */
+
+// @lc code=start
 /**
  * @param {number} n
  * @return {number}
  * https://leetcode.cn/problems/climbing-stairs/
- * 1: 1
- * 2: 2
- * 3: f(1) + f(2) 
- * 4: f(2) + f(3)
- * n: 走法来自前两层
+ * 0 - 0
+ * 1 - 1
+ * 2 - 1+1 2
  */
  var climbStairs = function(n) {
-  // 最近重复子问题
-  if (n <= 2) return n
-  var f1 = 1
-  var f2 = 2
-  var f3 = 3
-  for(var i = 3; i <= n; i++) {
-      f3 = f2 + f1
-      f1 = f2
-      f2 = f3
+  // 动态规划
+  let dp = new Array(n + 2)
+  dp[0] = 0
+  dp[1] = 1
+  dp[2] = 2
+  for(let i = 3; i <= n; i++) {
+      dp[i] = dp[i - 1] + dp[i - 2]
   }
-  return f3
+  return dp[n]
 };
+// @lc code=end
+
