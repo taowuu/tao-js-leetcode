@@ -1,3 +1,10 @@
+/*
+ * @lc app=leetcode.cn id=98 lang=javascript
+ *
+ * [98] 验证二叉搜索树
+ */
+
+// @lc code=start
 /**
  * Definition for a binary tree node.
  * function TreeNode(val, left, right) {
@@ -9,28 +16,18 @@
 /**
  * @param {TreeNode} root
  * @return {boolean}
- * https://leetcode.cn/problems/validate-binary-search-tree/
  */
  var isValidBST = function(root) {
-    // left < cur < right
-    // 递归比较
+    // 递归
+    if(root.length === 1) return true
     return helper(root, -Infinity, Infinity)
 };
-var helper = function(node, lower, upper) {
-    // 终止条件
-    if(node == null) {
-        // 需要返回值作判断
-        return true
-    }
-    // 剪枝
-    if (node.val <= lower || node.val >= upper) {
-        return false;
-    }
-    // 向子问题要答案
-    // 遍历左子树，当前节点作为上界
-    let l = helper(node.left, lower, node.val)
-    // 遍历右子树，当前节点作为下界
-    let r = helper(node.right, node.val, upper)
-    // 把答案交给父问题
+const helper = (node, low, up) => {
+    if(node === null) return true
+    if(node.val <= low || node.val >= up) return false
+    let l = helper(node.left, low, node.val)
+    let r = helper(node.right, node.val, up)
     return l && r
 }
+// @lc code=end
+
