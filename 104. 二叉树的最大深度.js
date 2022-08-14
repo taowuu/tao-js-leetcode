@@ -1,3 +1,10 @@
+/*
+ * @lc app=leetcode.cn id=104 lang=javascript
+ *
+ * [104] 二叉树的最大深度
+ */
+
+// @lc code=start
 /**
  * Definition for a binary tree node.
  * function TreeNode(val, left, right) {
@@ -12,16 +19,15 @@
  * https://leetcode.cn/problems/maximum-depth-of-binary-tree/submissions/
  */
  var maxDepth = function(root) {
-  // dfs bottom up 递归
-  // 边界处理即递归终止条件
-  if(root == null) {
-      return 0
-  }
-  // 无需全局答案
-  // 向子问题要答案
-  var leftVal = maxDepth(root.left)
-  var rightVal = maxDepth(root.right)
-  var res = Math.max(leftVal, rightVal) + 1
-  // 把答案交给父问题
-  return res
+  // 递归
+  let res = 0
+  return helper(root, res)
 };
+const helper = (node, temp) => {
+  if(node === null) return temp
+  let l = helper(node.left, temp + 1)
+  let r = helper(node.right, temp + 1)
+  return Math.max(l, r)
+}
+// @lc code=end
+
