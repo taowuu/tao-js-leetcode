@@ -1,3 +1,10 @@
+/*
+ * @lc app=leetcode.cn id=129 lang=javascript
+ *
+ * [129] 求根节点到叶节点数字之和
+ */
+
+// @lc code=start
 /**
  * Definition for a binary tree node.
  * function TreeNode(val, left, right) {
@@ -12,35 +19,18 @@
  * https://leetcode.cn/problems/sum-root-to-leaf-numbers/
  */
  var sumNumbers = function(root) {
-  // dfs top down 递归法
-  // 边界处理
-  if(root == null) {
-      return 0
-  }
-   // 全局答案
-  var res = 0
-  // 递归
-  var dfs = function(root, item) {
-      // 接收父问题传下的值做计算
-      item += String(root.val)
-      // 递归终止条件
-      if(root.left == null && root.right == null) {
-          // 额外操作
-          res += Number(item)
-          return 
-      }
-      // 无需向子问题要答案
-      // 当前层的操作，把值传给子问题
-      if(root.left != null) {
-          dfs(root.left, item)
-      }
-      if(root.right != null) {
-          dfs(root.right, item)
-      }
-      // 无需返回结果
-  }
-  // 传入初始层的值
-  dfs(root, 0)
-  // 返回答案
-  return res
+    // dfs
+    return helper(root, 0)
 };
+const helper = (node, i) => {
+    if (node == null) return 0
+    let temp = i * 10 + node.val
+    if(!node.left && !node.right) {
+        return temp
+    }
+    let l = helper(node.left, temp)
+    let r = helper(node.right, temp)
+    return l + r    
+}
+// @lc code=end
+
