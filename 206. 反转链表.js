@@ -1,3 +1,10 @@
+/*
+ * @lc app=leetcode.cn id=206 lang=javascript
+ *
+ * [206] 反转链表
+ */
+
+// @lc code=start
 /**
  * Definition for singly-linked list.
  * function ListNode(val, next) {
@@ -11,24 +18,16 @@
  * https://leetcode.cn/problems/reverse-linked-list/submissions/
  */
  var reverseList = function(head) {
-  if(head == null || head.next == null) {
-      return head
-  }
-  let temp = reverseList(head.next)
-  head.next.next = head
-  head.next = null
-  return temp
-};
-var reverseList = function(head) {
-  if(!head || !head.next) return head
-  let prev = null,
-      cur = head
+  if(head == null || head.next == null) return head
+  let pre = null
+  let cur = head
   while(cur) {
-      // 保留下一个节点
-      let n = cur.next
-      cur.next = prev
-      prev = cur
-      cur = n
-  } 
-  return prev
+      let temp = cur.next
+      cur.next = pre
+      pre = cur
+      cur = temp
+  }
+  return pre
 };
+// @lc code=end
+
