@@ -11,7 +11,7 @@
  * @return {number}
  * https://leetcode.cn/problems/minimum-size-subarray-sum/
  */
- var minSubArrayLen = function(target, nums) {
+var minSubArrayLen = function(target, nums) {
     let slow = 0,
         fast = 0,
         sum = 0,
