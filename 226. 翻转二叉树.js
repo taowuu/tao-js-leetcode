@@ -1,3 +1,10 @@
+/*
+ * @lc app=leetcode.cn id=226 lang=javascript
+ *
+ * [226] 翻转二叉树
+ */
+
+// @lc code=start
 /**
  * Definition for a binary tree node.
  * function TreeNode(val, left, right) {
@@ -11,10 +18,15 @@
  * @return {TreeNode}
  * https://leetcode.cn/problems/invert-binary-tree/
  */
-var invertTree = function(root) {
-    if(root === null) {
-        return root
-    }
-    [root.left, root.right] = [invertTree(root.right), invertTree(root.left)] 
+ var invertTree = function(root) {
+    if(root === null) return root    
+    // [root.left, root.right] = [invertTree(root.right), invertTree(root.left)] 
+    let temp = root.left
+    root.left = root.right
+    root.right = temp    
+    invertTree(root.left)
+    invertTree(root.right)
     return root
 };
+// @lc code=end
+
