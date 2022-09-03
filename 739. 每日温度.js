@@ -12,14 +12,11 @@
   var s = []
   var n = temperatures.length
   for(var i = n-1; i >= 0; i--) {
-      // 维护单调栈，顺便得出答案
-      // 不能随便入栈，先处理出栈
       while(s.lenght != 0 && temperatures[s[s.length-1]] <= temperatures[i]) {
           s.pop()
-      }
-      
-      res[i] = (s.length == 0) ? 0 : s[s.length-1] - i
+      } 
       s.push(i)
+      res[i] = (s.length == 0) ? 0 : s[s.length-1] - i 
   }
   return res
 };
