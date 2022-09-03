@@ -3,7 +3,7 @@
  * @return {number}
  * https://leetcode.cn/problems/number-of-provinces/
  */
- var findCircleNum = function(isConnected) {
+var findCircleNum = function(isConnected) {
     class UnionFind {
         constructor(n) {
             this.count = n
