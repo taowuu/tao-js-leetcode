@@ -1,9 +1,16 @@
+/*
+ * @lc app=leetcode.cn id=860 lang=javascript
+ *
+ * [860] 柠檬水找零
+ */
+
+// @lc code=start
 /**
  * @param {number[]} bills
  * @return {boolean}
  * https://leetcode.cn/problems/lemonade-change/
  */
-var lemonadeChange = function(bills) {
+ var lemonadeChange = function(bills) {
     let five = 0
     let ten = 0
     for(let i = 0; i < bills.length; i++) {
@@ -29,3 +36,5 @@ var lemonadeChange = function(bills) {
     }
     return true
 };
+// @lc code=end
+
