@@ -1,9 +1,16 @@
+/*
+ * @lc app=leetcode.cn id=977 lang=javascript
+ *
+ * [977] 有序数组的平方
+ */
+
+// @lc code=start
 /**
  * @param {number[]} nums
  * @return {number[]}
  * https://leetcode.cn/problems/squares-of-a-sorted-array/
  */
-var sortedSquares = function(nums) {
+ var sortedSquares = function(nums) {
     let n = nums.length
     let arr = new Array(n),
         left = 0,
@@ -23,3 +30,5 @@ var sortedSquares = function(nums) {
     }
     return arr
 };
+// @lc code=end
+
