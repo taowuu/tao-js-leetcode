@@ -1,13 +1,15 @@
 // https://leetcode.cn/problems/linked-list-cycle/
 
 var hasCycle = function(head) {
-    let f = head,
-        s = head
-    
-    while(f && f.next) {
-        f = f.next.next
-        s = s.next
-        if(f === s) return true
+    // 快慢指针相遇说明有环
+    let fast = head,
+        slow = head
+    // 防止 fast.next.next 报错
+    while(fast && fast.next) {
+        fast = fast.next.next
+        slow = slow.next
+        
+        if(fast === slow) return true
     }
 
     return false
