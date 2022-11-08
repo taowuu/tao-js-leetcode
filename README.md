@@ -31,3 +31,6 @@
 
 ## 队列
 - [933. 最近的请求次数](https://github.com/taowuu/tao-leetcode/blob/main/%E9%98%9F%E5%88%97/933.%20%E6%9C%80%E8%BF%91%E7%9A%84%E8%AF%B7%E6%B1%82%E6%AC%A1%E6%95%B0.js)
+
+## 集合
+- [349. 两个数组的交集](https://github.com/taowuu/tao-leetcode/blob/main/%E9%9B%86%E5%90%88/349.%20%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%BB%84%E7%9A%84%E4%BA%A4%E9%9B%86.js)
