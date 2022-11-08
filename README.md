@@ -28,3 +28,7 @@
 
 ## 哈希表
 - [1. 两数之和](https://github.com/taowuu/tao-leetcode/blob/main/%E5%93%88%E5%B8%8C%E8%A1%A8/1.%20%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C.js)
+
+## 栈
+- [20. 有效的括号](https://github.com/taowuu/tao-leetcode/blob/main/%E6%A0%88/20.%20%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7.js)
+- 
