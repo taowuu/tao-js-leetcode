@@ -5,12 +5,6 @@
 
 - [198. 打家劫舍](https://github.com/taowuu/tao-leetcode/blob/main/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/198.%20%E6%89%93%E5%AE%B6%E5%8A%AB%E8%88%8D.js)
 
-## 队列
-- [933. 最近的请求次数](https://github.com/taowuu/tao-leetcode/blob/main/%E9%98%9F%E5%88%97/933.%20%E6%9C%80%E8%BF%91%E7%9A%84%E8%AF%B7%E6%B1%82%E6%AC%A1%E6%95%B0.js)
-
-## 二分
-- [374. 猜数字大小](https://github.com/taowuu/tao-leetcode/blob/main/%E4%BA%8C%E5%88%86/374.%20%E7%8C%9C%E6%95%B0%E5%AD%97%E5%A4%A7%E5%B0%8F.js)
-
 ## 反向双指针
 - [977. 有序数组的平方](https://github.com/taowuu/tao-leetcode/blob/main/%E5%8F%8D%E5%90%91%E5%8F%8C%E6%8C%87%E9%92%88/977.%20%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E5%B9%B3%E6%96%B9.js)
 
@@ -26,9 +20,14 @@
 
 - [226. 翻转二叉树](https://github.com/taowuu/tao-leetcode/blob/main/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88/226.%20%E7%BF%BB%E8%BD%AC%E4%BA%8C%E5%8F%89%E6%A0%91.js)
 
+## 二分
+- [374. 猜数字大小](https://github.com/taowuu/tao-leetcode/blob/main/%E4%BA%8C%E5%88%86/374.%20%E7%8C%9C%E6%95%B0%E5%AD%97%E5%A4%A7%E5%B0%8F.js)
+
 ## 哈希表
 - [1. 两数之和](https://github.com/taowuu/tao-leetcode/blob/main/%E5%93%88%E5%B8%8C%E8%A1%A8/1.%20%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C.js)
 
 ## 栈
 - [20. 有效的括号](https://github.com/taowuu/tao-leetcode/blob/main/%E6%A0%88/20.%20%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7.js)
-- 
+
+## 队列
+- [933. 最近的请求次数](https://github.com/taowuu/tao-leetcode/blob/main/%E9%98%9F%E5%88%97/933.%20%E6%9C%80%E8%BF%91%E7%9A%84%E8%AF%B7%E6%B1%82%E6%AC%A1%E6%95%B0.js)
