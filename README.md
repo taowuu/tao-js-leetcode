@@ -26,3 +26,5 @@
 
 - [226. 翻转二叉树](https://github.com/taowuu/tao-leetcode/blob/main/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88/226.%20%E7%BF%BB%E8%BD%AC%E4%BA%8C%E5%8F%89%E6%A0%91.js)
 
+## 哈希表
+- [1. 两数之和](https://github.com/taowuu/tao-leetcode/blob/main/%E5%93%88%E5%B8%8C%E8%A1%A8/1.%20%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C.js)
