@@ -21,7 +21,9 @@
 - [226. 翻转二叉树](https://github.com/taowuu/tao-leetcode/blob/main/df/226.js)
 
 ## 贪心
-- [122. 买卖股票的最佳时机 II]()
+- [122. 买卖股票的最佳时机 II](https://github.com/taowuu/tao-leetcode/blob/main/greedy/122.js)
+
+- [455. 分发饼干](https://github.com/taowuu/tao-leetcode/blob/main/greedy/455.js)
 
 ## 二分
 - [374. 猜数字大小](https://github.com/taowuu/tao-leetcode/blob/main/binary/374.js)
