@@ -41,4 +41,12 @@
 - [349. 两个数组的交集](https://github.com/taowuu/tao-leetcode/blob/main/set/349.js)
 
 ## 链表
-- [2. 两数相加]()
+- [2. 两数相加](https://github.com/taowuu/tao-leetcode/blob/main/list/2.js)
+
+- [21. 合并两个有序链表](https://github.com/taowuu/tao-leetcode/blob/main/list/21.js)
+
+- [83. 删除排序链表中的重复元素](https://github.com/taowuu/tao-leetcode/blob/main/list/83.js)
+
+- [237. 删除链表中的节点](https://github.com/taowuu/tao-leetcode/blob/main/list/237.js)
+
+
