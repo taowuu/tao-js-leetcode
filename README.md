@@ -39,3 +39,6 @@
 
 ## 集合
 - [349. 两个数组的交集](https://github.com/taowuu/tao-leetcode/blob/main/set/349.js)
+
+## 链表
+- [2. 两数相加]()
