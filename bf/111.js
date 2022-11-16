@@ -7,7 +7,7 @@ var minDepth = function(root) {
 
     while(q.length) {
         const [n, l] = q.shift()
-
+        // 最先找到的叶子为最小深度
         if(!n.left && !n.right) {
             return l
         }
