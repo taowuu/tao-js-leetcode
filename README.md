@@ -25,6 +25,11 @@
 
 - [111. 二叉树的最小深度](https://github.com/taowuu/tao-leetcode/blob/main/bf/102.js)
 
+## 回溯
+- [46. 全排列](https://github.com/taowuu/tao-leetcode/blob/main/backtrack/46.js)
+
+- [78. 子集](https://github.com/taowuu/tao-leetcode/blob/main/backtrack/78.js)
+
 ## 贪心
 - [122. 买卖股票的最佳时机 II](https://github.com/taowuu/tao-leetcode/blob/main/greedy/122.js)
 
